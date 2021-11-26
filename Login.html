@@ -1,0 +1,36 @@
+<!-- <?php
+session_start();
+
+
+if (isset($_POST["submit"])) {
+    $username = htmlentities($_POST["username"]);
+    $password = htmlentities($_POST["password"]);
+    
+    $x=mysqli_fetch_assoc($result)
+
+    if ($username == $x['username'])
+
+    $_SESSION["username"] = $username;
+    $_SESSION["password"] = $password;
+
+    setcookie("username", $username, time() +3600);
+    setcookie("password", $password, time() +3600);
+
+    header("Location: Dashboard.php");
+}
+?> -->
+
+<html>
+    <body>
+    <h2>Enter Login</h2>
+    <form action="process.php" method="POST"> 
+        <h4>Username:</h4>
+        <input type = "text" name = "username">
+        </br>
+        <h4>Password:</h4>
+        <input type = "password" name = "password">
+        </br></br>
+        <input type = "submit" name = "submit" value = "Login">
+    </form>
+    </body>
+</html>
