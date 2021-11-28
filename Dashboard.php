@@ -1,3 +1,42 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+    body{
+        font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    line-height: 32px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+    background: #f8f9fa!important;
+    }
+
+    .table{
+        text-align: center;
+        
+    }
+
+    .content{
+        
+        margin: 15px;
+    }
+
+    .navbar button a{
+        text-decoration: none!important;
+    }
+    .navbar-brand{
+    }
+</style>
+</head>
+
 <?php
 include_once('connect.php');
 $query="select * from testdummy";
@@ -46,61 +85,64 @@ if(array_key_exists('export',$_POST)){
 
 <html>
     
-    <h1 align="center">Dashboard</h1>
-    <br>
+
 
     <body>
-        <table align="center" border="1px" style="width:1500px; line-height:40px;">
-            <tr>
-                <th colspan="12"><h2>Database Table</h2></th>
-            </tr>
-            <t>
-                <th> ID </th>
-                <th> Name </th>
-                <th> Contact </th>
-                <th> Email </th>
-                <th> Department </th>
-                <th> nid </th>
-                <th> Gender </br>
-                <th> Address </th>
-                <th> Birthday </th>
-                <th> Degree </th>
-                <th> Action </th>
-            </t>
+        <div>
+        <nav class="navbar navbar-dark bg-dark">
+            
+        <a class="navbar-brand" href="#">Dashboard</a>
+                
+        <a style="color: white;"  href="Login.html"><button class="btn btn-secondary text-white">Logout</button></a>
+            
+        </nav>  
+        </div>
+
+        <div class="container-md content">
+        <a style="color:white;" href="addemp.php"><button class="btn btn-primary" style="margin-bottom: 10px;">Add Employee</button></a>
+        <hr>
+        <h4>Employee Database</h4>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <th scope="col"> ID </th>
+                <th scope="col"> Name </th>
+                <th scope="col"> Contact </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Department </th>
+                <th scope="col"> nid </th>
+                <th scope="col"> Gender </br>
+                <th scope="col"> Address </th>
+                <th scope="col"> Birthday </th>
+                <th scope="col"> Degree </th>
+                <th scope="col"> Action </th>
+            </thead>
 
             <?php
                 while($x=mysqli_fetch_assoc($result)){
             ?>
-                    <tr>
-                        <td align="center"><?php echo $x['id'] ?></td>
-                        <td align="center"><?php echo $x['firstname'] . " " . $x['lastname'] ?></td>
-                        <td align="center"><?php echo $x['contact'] ?></td>
-                        <td align="center"><?php echo $x['email'] ?></td>
-                        <td align="center"><?php echo $x['dept'] ?></td>
-                        <td align="center"><?php echo $x['nid'] ?></td>
-                        <td align="center"><?php echo $x['gender'] ?></td>
-                        <td align="center"><?php echo $x['address'] ?></td>
-                        <td align="center"><?php echo $x['birthday'] ?></td>
-                        <td align="center"><?php echo $x['degree'] ?></td>
-                        <td align="center"><?php echo "<a href=\"edit.php?id=$x[id]\">Edit</a> | <a href=\"delete.php?id=$x[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; ?>
+                    <tr scope="row">
+                        <td ><?php echo $x['id'] ?></td>
+                        <td ><?php echo $x['firstname'] . " " . $x['lastname'] ?></td>
+                        <td ><?php echo $x['contact'] ?></td>
+                        <td ><?php echo $x['email'] ?></td>
+                        <td ><?php echo $x['dept'] ?></td>
+                        <td ><?php echo $x['nid'] ?></td>
+                        <td ><?php echo $x['gender'] ?></td>
+                        <td ><?php echo $x['address'] ?></td>
+                        <td ><?php echo $x['birthday'] ?></td>
+                        <td ><?php echo $x['degree'] ?></td>
+                        <td ><?php echo "<a class=\"btn btn-success\" href=\"edit.php?id=$x[id]\">Edit</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=$x[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; ?>
                     </tr>
             <?php
                 }
             ?>
         </table>
-        <br><br>
-        <center>
-        <form method = 'post'>
-        <input type='submit' name='export' class='button' value='EXPORT'/>
-        </form>
-            </center>
-        <br><br>
 
-        <center>
-        <button><a style="text-decoration: none;color:black;" href="Login.html">RETURN</a></button>
-        <br><br>
-        <button><a style="text-decoration: none;color:black;" href="addemp.php">Add Emp</a></button>
-        </center>
+        <form method = 'post'>
+            <input type='submit' name='export' class='btn btn-secondary' value='Export'/>
+        </form>
+        </div>
+
     </body>
 
 </html>

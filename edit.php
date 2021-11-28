@@ -73,6 +73,8 @@ $result = mysqli_query($conn, "UPDATE `testdummy` SET `firstName`='$firstname',`
 
     <!-- Main CSS-->
     <link href="main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 	
@@ -86,16 +88,16 @@ $result = mysqli_query($conn, "UPDATE `testdummy` SET `firstName`='$firstname',`
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Update Employee Info</h2>
+                    <h2 class="title">Edit Employee Details</h2>
                     <form id = "registration" action="edit.php" method="POST">
 
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="">
                                 <div class="input-group">
-                                     <input class="input--style-1" type="text" name="firstname" value="<?php echo $firstname;?>" >
+                                    <input class="input--style-1" type="text" name="firstname" value="<?php echo $firstname;?>" >
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="">
                                 <div class="input-group">
                                     <input class="input--style-1" type="text" name="lastname" value="<?php echo $lastname;?>">
                                 </div>
@@ -110,13 +112,13 @@ $result = mysqli_query($conn, "UPDATE `testdummy` SET `firstName`='$firstname',`
                             <input class="input--style-1" type="email"  placeholder="Email"name="email" value="<?php echo $email;?>">
                         </div>
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="">
                                 <div class="input-group">
                                     <input class="input--style-1" type="text"  placeholder="Birthday" name="birthday" value="<?php echo $birthday;?>">
                                    
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="">
                                 <div class="input-group">
 									<input class="input--style-1" type="text"  placeholder="Gender" name="gender" value="<?php echo $gender;?>">
                                 </div>
@@ -144,8 +146,8 @@ $result = mysqli_query($conn, "UPDATE `testdummy` SET `firstName`='$firstname',`
                             <input class="input--style-1" type="text"  placeholder="Degree"name="degree" value="<?php echo $degree;?>">
                         </div>
                         <input type="hidden" name="id" id="textField" value="<?php echo $id;?>" required="required"><br><br>
-                        <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit" name="update">Submit</button>
+                        <div class="p-t-20" style="display: flex; justify-content: center;">
+                            <button class="btn btn-primary" type="submit">Update</button>
                         </div>
                         
                     </form>

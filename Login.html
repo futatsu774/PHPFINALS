@@ -21,16 +21,32 @@ if (isset($_POST["submit"])) {
 ?> -->
 
 <html>
-    <body>
-    <h2>Enter Login</h2>
-    <form action="process.php" method="POST"> 
-        <h4>Username:</h4>
-        <input type = "text" name = "username">
-        </br>
-        <h4>Password:</h4>
-        <input type = "password" name = "password">
-        </br></br>
-        <input type = "submit" name = "submit" value = "Login">
-    </form>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Login</h2>
+        <form action="process.php" method="POST">
+            <div class="inputBox">
+                <input type="text" name="username" required onkeyup="this.setAttribute('value', this.value);" value="">
+                <label>Username</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" required value="" onkeyup="this.setAttribute('value', this.value);" pattern=".{6,}" title="Must have at least 6 or more characters">
+                <label>Password</label>
+            </div>
+            <div class="centerbtn">
+                <input class="btn btn-primary" type="submit" name="submit" value="Login">
+
+            </div>
+        </form>
+    </div>
+
+</body>
+
 </html>
