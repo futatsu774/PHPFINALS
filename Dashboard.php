@@ -13,7 +13,7 @@
     font-weight: 400;
     font-stretch: normal;
     line-height: 32px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Dosis', sans-serif;
     letter-spacing: normal;
     margin: 0 0 16px;
     background: #f8f9fa!important;
@@ -48,7 +48,7 @@ $z = mysqli_fetch_assoc($result);
 class Mat {
     public $var;
     public $num;
-   
+
     public function wow($var){
         $date = date("Y/m/d");
 
@@ -63,11 +63,9 @@ class Mat {
 class Foo extends Mat {
     
     public function wow($var){       
-   
-    header("Location: Login.html");   
-      
 
-  
+    header("Location: index.html");   
+
 
 }
 }
@@ -91,13 +89,13 @@ if (array_key_exists('logout',$_POST)){
     $obj = new Foo;
     $q= mysqli_fetch_assoc($result);
     $w = mysqli_num_rows($result);
-  
+
     $fh = fopen('data.txt', 'w');
     while($row = mysqli_fetch_assoc($result)){
-      
-         $obj -> wow($row);
     
-    /
+        $obj -> wow($row);
+    
+    
 }
 }
 
@@ -111,13 +109,17 @@ if (array_key_exists('logout',$_POST)){
 
     <body>
 
+        <div class="position-sticky">
+        <nav class="shadow navbar navbar-dark bg-dark">
+        
         <div>
-        <nav class="navbar navbar-dark bg-dark">
-            
-        <a class="navbar-brand" href="#">Dashboard</a>
+        <a class="navbar-brand" href="Dashboard.php">Dashboard</a>
+        <a class="navbar-brand" href="aboutus.php">About Us</a>
+        </div>
+        
                 
         <!-- <a style="color: white;"  href="index.html"><button class="btn btn-secondary text-white">Logout</button></a> -->
-        <form method= 'post'>
+        <form method= 'post' >
         <a style="color: white;"><input type="submit" name='logout' class="btn btn-secondary text-white" value ="Logout"></a>
         </form>
             
@@ -125,10 +127,10 @@ if (array_key_exists('logout',$_POST)){
         </div>
 
         <div class="container-md content">
-        <a style="color:white;" href="addemp.php"><button class="btn btn-primary" style="margin-bottom: 10px;">Add Employee</button></a>
+        <a style="color:white;" href="addemp.php"><button class="btn btn-primary shadow" style="margin-bottom: 10px;">Add Employee</button></a>
         <hr>
         <h4>Employee Database</h4>
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered table-responsive shadow">
             <thead class="thead-light">
                 <th scope="col"> ID </th>
                 <th scope="col"> Name </th>
@@ -165,7 +167,7 @@ if (array_key_exists('logout',$_POST)){
         </table>
 
         <form method = 'post'>
-            <input type='submit' name='export' class='btn btn-secondary' value='Export'/>
+            <input type='submit' name='export' class='btn btn-secondary shadow' value='Export'/>
         </form>
         </div>
 

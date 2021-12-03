@@ -1,2 +1,0 @@
-10	5	TULALIANada	lian@gmail.com	2021-11-20	Female	2	qv	42	dqq	434342
-11	dadaddadda	3333	ada@gmail.com	2021-11-04	Other	3	arfvvva	hg	z	313131
