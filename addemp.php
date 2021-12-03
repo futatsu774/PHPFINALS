@@ -19,8 +19,6 @@
 
     <!-- Main CSS-->
     <link href="main.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -36,34 +34,41 @@
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Employee Details</h2>
+                    <h2 class="title">Registration Info</h2>
                     <form action="addempprocess.php" method="POST" enctype="multipart/form-data">
 
+
+                        
+
                         <div class="row row-space">
-                            <div class="">
+                            <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="First Name" name="firstName" required="required">
+                                     <input class="input--style-1" type="text" placeholder="First Name" name="firstName" required="required">
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="col-2">
                                 <div class="input-group">
                                     <input class="input--style-1" type="text" placeholder="Last Name" name="lastName" required="required">
                                 </div>
                             </div>
                         </div>
 
+
+
+
+
                         <div class="input-group">
                             <input class="input--style-1" type="email" placeholder="Email" name="email" required="required">
                         </div>
                         <p>Birthday</p>
                         <div class="row row-space">
-                            <div class="">
+                            <div class="col-2">
                                 <div class="input-group">
                                     <input class="input--style-1" type="date" placeholder="BIRTHDATE" name="birthday" required="required">
-                                
+                                   
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="col-2">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="gender">
@@ -100,8 +105,8 @@
                         </div>
 
 
-                        <div class="p-t-20" style="display: flex; justify-content: center;">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
