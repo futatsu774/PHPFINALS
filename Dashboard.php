@@ -42,47 +42,65 @@
 
 <?php
 include_once('connect.php');
-
 $query="select * from testdummy";
 $result=mysqli_query($conn,$query);
 $z = mysqli_fetch_assoc($result);
 class Mat {
     public $var;
-    function wow(){
+    public $num;
+   
+    public function wow($var){
+        $date = date("Y/m/d");
 
-        $this->var;
-
-        // $data = serialize($z);
-        // file_put_contents("TableData.txt", $data);
+        $test = print_r($var,true);
+        $data = serialize($test);
+        file_put_contents("TableData.txt", $data, FILE_APPEND);
+        header("Location: Dashboard.php");
     }
+
 }
+
+class Foo extends Mat {
+    
+    public function wow($var){       
+   
+    header("Location: Login.html");   
+      
+
+  
+
+}
+}
+
 
 
 if(array_key_exists('export',$_POST)){
-    $fh = fopen('data.txt', 'w');
     $obj = new Mat;
-    $obj->var= mysqli_fetch_assoc($result);
-    $a= print_r($obj,true);
-    echo $a;
-    $data = serialize($obj);
-    file_put_contents("TableData.txt", $data);
-    // $obj2 = clone $obj;
-    // $obj2 = clone mysqli_fetch_assoc($result);
-    while($z = mysqli_fetch_assoc($result)){
-        //  $foo = print_r($z,true);
-        //  echo $foo;
-        $last = end($z);
-    foreach ($z as $item){
-        fwrite($fh, $item);
-        if ($item != $last)
-            fwrite($fh, "\t");
-        }
-        fwrite($fh, "\n");
-    }fclose($fh);
-    header("Location: Dashboard.php");
+    $q= mysqli_fetch_assoc($result);
+    $w = mysqli_num_rows($result);
+    while ($row = mysqli_fetch_assoc($result)){
+        
+        $obj -> wow($row);
+    }
+
+
+
+} 
+
+if (array_key_exists('logout',$_POST)){
+    $obj = new Foo;
+    $q= mysqli_fetch_assoc($result);
+    $w = mysqli_num_rows($result);
+  
+    $fh = fopen('data.txt', 'w');
+    while($row = mysqli_fetch_assoc($result)){
+      
+         $obj -> wow($row);
+    
+    /
+}
 }
 
-    // echo "wow()";
 
 
 ?>
@@ -98,7 +116,10 @@ if(array_key_exists('export',$_POST)){
             
         <a class="navbar-brand" href="#">Dashboard</a>
                 
-        <a style="color: white;"  href="index.html"><button class="btn btn-secondary text-white">Logout</button></a>
+        <!-- <a style="color: white;"  href="index.html"><button class="btn btn-secondary text-white">Logout</button></a> -->
+        <form method= 'post'>
+        <a style="color: white;"><input type="submit" name='logout' class="btn btn-secondary text-white" value ="Logout"></a>
+        </form>
             
         </nav>  
         </div>
