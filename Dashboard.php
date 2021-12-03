@@ -98,7 +98,7 @@ if(array_key_exists('export',$_POST)){
             
         <a class="navbar-brand" href="#">Dashboard</a>
                 
-        <a style="color: white;"  href="Login.html"><button class="btn btn-secondary text-white">Logout</button></a>
+        <a style="color: white;"  href="index.html"><button class="btn btn-secondary text-white">Logout</button></a>
             
         </nav>  
         </div>
