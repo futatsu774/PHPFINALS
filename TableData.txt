@@ -1,1 +1,57 @@
-O:3:"Mat":1:{s:3:"var";a:11:{s:2:"id";s:1:"9";s:9:"firstname";s:6:"DERICd";s:8:"lastname";s:8:"TULALIAN";s:5:"email";s:24:"0derictulalian@gmail.com";s:8:"birthday";s:10:"2021-11-04";s:6:"gender";s:5:"Other";s:3:"nid";s:4:"3123";s:7:"address";s:37:"Unit 2811 Tower 1 Sun Residences Q.C.";s:4:"dept";s:2:"HR";s:6:"degree";s:2:"IT";s:7:"contact";s:6:"313131";}}
+s:254:"Array
+(
+    [id] => 10
+    [firstname] => 5
+    [lastname] => TULALIANada
+    [email] => lian@gmail.com
+    [birthday] => 2021-11-20
+    [gender] => Female
+    [nid] => 2
+    [address] => qv
+    [dept] => 42
+    [degree] => dqq
+    [contact] => 434342
+)
+";s:264:"Array
+(
+    [id] => 194
+    [firstname] => levi
+    [lastname] => sazon
+    [email] => sazon.levi19@gmail.com
+    [birthday] => 2021-11-19
+    [gender] => Male
+    [nid] => 123
+    [address] => manila
+    [dept] => IICS
+    [degree] => IT
+    [contact] => 12345
+)
+";s:272:"Array
+(
+    [id] => 195
+    [firstname] => levi
+    [lastname] => sazon
+    [email] => sazon.levi19@gmail.com
+    [birthday] => 2021-11-20
+    [gender] => Male
+    [nid] => 123
+    [address] => sampaloc, manila
+    [dept] => IICS
+    [degree] => IT
+    [contact] => 123
+)
+";s:271:"Array
+(
+    [id] => 197
+    [firstname] => levi
+    [lastname] => sazon
+    [email] => sazon.levi19@gmail.com
+    [birthday] => 2021-12-05
+    [gender] => Male
+    [nid] => 123123
+    [address] => bataan
+    [dept] => IICS
+    [degree] => IT
+    [contact] => 123123123
+)
+";

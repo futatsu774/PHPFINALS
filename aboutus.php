@@ -39,11 +39,11 @@
             margin: 0 auto;
         }
         
-        .lead::first-letter{
+        .first-paragraph::first-letter{
             font-size:400%;
             initial-letter: 2;
         }
-        p::first-letter {
+        .first-paragraph::first-letter {
             -webkit-initial-letter: 3 2;
             initial-letter: 3 2;
         }
@@ -122,6 +122,10 @@ if (array_key_exists('logout',$_POST)){
             </div>
 
             <center>
+            <p class="lead first-paragraph">Hi, we are the Group 4 from 4ITG. We have developed a web application that allows HR managers of a company to
+                input employee records with ease and the ability to export all of the information that are saved in the database into a text file.
+            </p>
+
             <p class="lead">This web app is developed to store employee records in a table. The app improves efficiency due to its easy and effective
                 way of storing employee records. Security is also another thing that was taken into consideration, the website will have a unique url that will not be
                 announced within the company and the credentials for the admin will be made only when a request is sent, thus, explaining the lack of creating account feature.
