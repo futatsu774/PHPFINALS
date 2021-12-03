@@ -21,7 +21,9 @@
 
     .table{
         text-align: center;
-        
+        max-width: 100%;
+        min-width: 80%;
+
     }
 
     .content{
@@ -32,16 +34,18 @@
     .navbar button a{
         text-decoration: none!important;
     }
-    .navbar-brand{
+    .actions a{
+        margin: 10px!important;
     }
 </style>
 </head>
 
 <?php
 include_once('connect.php');
+
 $query="select * from testdummy";
 $result=mysqli_query($conn,$query);
- $z = mysqli_fetch_assoc($result);
+$z = mysqli_fetch_assoc($result);
 class Mat {
     public $var;
     function wow(){
@@ -88,6 +92,7 @@ if(array_key_exists('export',$_POST)){
 
 
     <body>
+
         <div>
         <nav class="navbar navbar-dark bg-dark">
             
@@ -102,7 +107,7 @@ if(array_key_exists('export',$_POST)){
         <a style="color:white;" href="addemp.php"><button class="btn btn-primary" style="margin-bottom: 10px;">Add Employee</button></a>
         <hr>
         <h4>Employee Database</h4>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
             <thead class="thead-light">
                 <th scope="col"> ID </th>
                 <th scope="col"> Name </th>
@@ -131,7 +136,7 @@ if(array_key_exists('export',$_POST)){
                         <td ><?php echo $x['address'] ?></td>
                         <td ><?php echo $x['birthday'] ?></td>
                         <td ><?php echo $x['degree'] ?></td>
-                        <td ><?php echo "<a class=\"btn btn-success\" href=\"edit.php?id=$x[id]\">Edit</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=$x[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; ?>
+                        <td class="actions"><?php echo "<a class=\"btn btn-success\" href=\"edit.php?id=$x[id]\">Edit</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=$x[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; ?>
                     </tr>
             <?php
                 }

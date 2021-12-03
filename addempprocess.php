@@ -24,12 +24,14 @@ if(($result) == 1){
     window.alert('Succesfully Registered')
     window.location.href='Dashboard.php';
     </SCRIPT>");
+    
+
     //header("Location: ..//aloginwel.php");
 }
 
 else{
     echo ("<SCRIPT LANGUAGE='JavaScript'>
-    window.alert('Failed to Registere')
+    window.alert('Failed to Register')
     window.location.href='javascript:history.go(-1)';
     </SCRIPT>");
 }
